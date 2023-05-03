@@ -46,7 +46,7 @@ def task_3(line_1='Привет', line_2='Мир'):
 # Задание 4
 def task_4(line_1=r'D:\autotest_qa\honework_2.py'):
 
-    dot_search = line_1.find('.', 2)  # поиск индекса последней точки(стоит перед расширением конечного файла)
+    dot_search = line_1.rfind('.')  # поиск индекса последней точки(стоит перед расширением конечного файла)
     last_slash = line_1.rfind('\\') + 1  # поиск индекса последнего "\"
 
     if dot_search == -1:
@@ -56,7 +56,7 @@ def task_4(line_1=r'D:\autotest_qa\honework_2.py'):
     else:
         name_file = line_1[last_slash: dot_search]
         disk_name = line_1[:1]
-        root_folder_name = line_1[3:last_slash - 1]
+        root_folder_name = line_1[3:line_1.find('\\', 3)]
 
     total_info = '''
     Название диска - {}
