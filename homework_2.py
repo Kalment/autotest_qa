@@ -46,7 +46,7 @@ def task_3(line_1='Привет', line_2='Мир'):
 # Задание 4
 def task_4(line_1=r'D:\autotest_qa\honework_2.py'):
 
-    dot_search = line_1.rfind('.')  # поиск индекса последней точки(стоит перед расширением конечного файла)
+    dot_search = line_1.find('.', 2)  # поиск индекса последней точки(стоит перед расширением конечного файла)
     last_slash = line_1.rfind('\\') + 1  # поиск индекса последнего "\"
 
     if dot_search == -1:
@@ -55,8 +55,16 @@ def task_4(line_1=r'D:\autotest_qa\honework_2.py'):
         return ("Слэш не найден, в строке нет файла")
     else:
         name_file = line_1[last_slash: dot_search]
+        disk_name = line_1[:1]
+        root_folder_name = line_1[3:last_slash - 1]
 
-    return name_file
+    total_info = '''
+    Название диска - {}
+    Название корневой папки - {}
+    Имя файла - {}
+    '''.format(disk_name, root_folder_name, name_file)
+
+    return total_info
 
 
 # Задание 5
@@ -95,7 +103,7 @@ def task_7(line_1=r'wtf', line_2=r'brick quz jmpy veldt whangs fox'):
 # print(task_1())
 # print(task_2())
 # print(task_3())
-# print(task_4())
+print(task_4())
 # print(task_5())
 # print(task_6())
 # print(task_7())
