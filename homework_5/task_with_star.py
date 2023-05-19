@@ -38,39 +38,7 @@ test_data = [
     'MCDXCIV', 'MCDXLIV']
 
 
-# for i, d in enumerate(data):
-#     assert to_roman(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
-#     print(f'Тестовый набор {d} прошёл проверку')
-# print('Всё ок')
-
-# val = 391
-#
-# units = {0: '', 1: 'I', 2: 'II', 3: 'III', 4: 'VI', 5: 'V', 6: 'IV', 7: 'IIV', 8: 'IIIV', 9: 'XI'}
-# dozens = {0: '', 1: 'X', 2: 'XX', 3: 'XXX', 4: 'LX', 5: 'L', 6: 'XL', 7: 'XXL', 8: 'XXXL', 9: 'CX'}
-# hundreds = {0: '', 1: 'C', 2: 'CC', 3: 'CCC', 4: 'DC', 5: 'D', 6: 'CD', 7: 'CCD', 8: 'CCCD', 9: 'MC'}
-#
-# roman_str = ''
-#
-# while val > 0:
-#     num = val % 10
-#     val //= 10
-#     if val > 100:
-#         roman_str += 'M' * num
-#     elif val >= 10:
-#         roman_str += hundreds[num]
-#     elif val >= 0:
-#         roman_str += dozens[num]
-#     else:
-#         roman_str += units[num]
-#
-#     # if val >= 1000:
-#     #         roman_str += units[num]
-#     # elif val >= 100:
-#     #     roman_str += dozens[num]
-#     # elif val >= 10:
-#     #     roman_str += hundreds[num]
-#     # else:
-#     #     roman_str += 'M' * num
-#     val //= 10
-#     print(num, val, roman_str)
-# print(roman_str[::-1])
+for i, d in enumerate(data):
+    assert to_roman(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
+    print(f'Тестовый набор {d} прошёл проверку')
+print('Всё ок')

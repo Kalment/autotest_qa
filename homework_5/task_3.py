@@ -29,7 +29,7 @@ def everything_for_your_cat(cats_data):
     our_str = ''
     buyer_cats = {}
     for n in cats_data:
-        chel_fo = n[2] + ' ' + n[3]
+        chel_fo = f'{n[2]} {n[3]}'
         if chel_fo in buyer_cats:
             buyer_cats[chel_fo] += '; ' + n[0] + ', ' + str(n[1])
         else:

@@ -13,14 +13,24 @@ def letter_stat(our_str):
     :param our_str: входная строка
     :return: letters_dict - словарь с ключами в виде букв и значениями в виде их повторения
     """
+    # первый вариант
+    # letters_dict = {}
+    # for n in range(len(our_str)):
+    #     count = 0
+    #     for m in range(len(our_str)):
+    #         if our_str[m] == our_str[n]:
+    #             count += 1
+    #     letters_dict.update({our_str[n]: count})
 
+    # второй вариант
     letters_dict = {}
-    for n in range(len(our_str)):
-        count = 0
-        for m in range(len(our_str)):
-            if our_str[m] == our_str[n]:
-                count += 1
-        letters_dict.update({our_str[n]: count})
+    count = 1
+    for n in our_str:
+        if n not in letters_dict:
+            letters_dict.update({n: count})
+        else:
+            letters_dict.update({n: letters_dict.get(n) + count})
+
 
     return letters_dict
 
@@ -46,3 +56,15 @@ for i, d in enumerate(data):
     assert letter_stat(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
     print(f'Тестовый набор {d} прошёл проверку')
 print('Всё ок')
+
+
+# our_str = 'автотестирование'
+# letters_dict = {}
+# count = 1
+# for n in our_str:
+#     if n not in letters_dict:
+#         letters_dict.update({n: count})
+#     else:
+#         letters_dict.update({n: letters_dict.get(n) + count})
+#
+# print(letters_dict)
